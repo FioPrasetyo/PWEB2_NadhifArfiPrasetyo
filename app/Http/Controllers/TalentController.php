@@ -14,7 +14,7 @@ class TalentController extends Controller
     public function index()
     {
         $data=Talent::orderBy('username','asc')->get();
-        return view('admin.table',['data'=>$data]);
+        return view('admin.table',['title'=>'Database - PT WARNA EMAS INDONESIA','data'=>$data]);
     }
 
     /***

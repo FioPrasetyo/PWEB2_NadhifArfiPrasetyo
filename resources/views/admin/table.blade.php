@@ -22,9 +22,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Data Table</h5>
-
+              <!-- <button class="btn btn-primary">asasas</button> -->
               <!-- Table with stripped rows -->
-              <table class="table datatable">
+              <table class="table table-striped" id="example" style="width:100%">
                 <thead>
                   <tr>
                     <th scope="col">No</th>

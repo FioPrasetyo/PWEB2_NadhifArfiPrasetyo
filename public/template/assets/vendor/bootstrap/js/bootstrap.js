@@ -702,7 +702,15 @@
   function normalizeDataKey(key) {
     return key.replace(/[A-Z]/g, chr => `-${chr.toLowerCase()}`);
   }
-
+  $(document).ready(function() {
+    var table = $('#example').DataTable( {
+        lengthChange: false,
+        buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+    } );
+ 
+    table.buttons().container()
+        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+  } );
   const Manipulator = {
     setDataAttribute(element, key, value) {
       element.setAttribute(`data-bs-${normalizeDataKey(key)}`, value);
@@ -4355,7 +4363,7 @@
       return NAME$3;
     } // Overrides
 
-
+    
     _isWithContent() {
       return this._getTitle() || this._getContent();
     } // Private
