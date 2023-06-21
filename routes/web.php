@@ -21,9 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function(){
 
     //route admin mulai
-    Route::get('/admin/dashboard', function () {
-        return view('admin.main-dashboard',['title'=>'Dashboard - PT WARNA EMAS INDONESIA']);
-    });
+    Route::get('/admin/dashboard',[TalentController::class,'dashboard']);
     
     Route::get('/admin/talent', function () {
         return view('admin.talent',['title'=>'Talent - PT WARNA EMAS INDONESIA']);
