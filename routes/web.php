@@ -14,10 +14,12 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+// untuk login
 Route::get('/', function () {
     return view('login.login');
 })->name('login');
 
+// middleware
 Route::middleware(['auth'])->group(function(){
 
     //route admin mulai
