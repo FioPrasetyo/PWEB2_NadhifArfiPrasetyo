@@ -37,6 +37,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
+        // konfigurasi jgn diubah
         $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
