@@ -34,7 +34,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                        @foreach ($minOfFollowers as $follow)
+                        @foreach($minOfFollowers as $follow)
                             {{$follow->username}} |
                             {{$follow->followers}}
                         @endforeach
@@ -59,7 +59,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                        @foreach ($maxOfFollowers as $follow)
+                        @foreach($maxOfFollowers as $follow)
                             {{$follow->username}} |
                             {{$follow->followers}}
                         @endforeach

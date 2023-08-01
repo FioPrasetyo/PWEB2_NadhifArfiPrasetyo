@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function(){
 
     //route admin mulai
     Route::get('/admin/dashboard',[TalentController::class,'dashboard']);
-    
+    return view('admin.main-dashboard',['title'=>'Dashboard - PT WARNA EMAS INDONESIA']);
     Route::get('/admin/talent', function () {
         return view('admin.talent',['title'=>'Talent - PT WARNA EMAS INDONESIA']);
     });
@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function(){
         return view('manager.manager-dashboard');
     });
 });
+
+Route::get('/admin/dashboard',[TalentController::class,'dashboard']);
 
 //route login
 Route::post('/login',[LoginController::class,'authen']);

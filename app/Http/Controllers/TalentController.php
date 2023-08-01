@@ -14,11 +14,15 @@ class TalentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function dashboard(){
-       
-        $max = 1000;
+     public function dashboard(){
+        // subquery
+        $max = Talent::where('followers', '=', function ($query) {
+            $query->selectRaw('max(followers)')->from('talent');
+        })->get();
 
-        $min = 10;
+        $min = Talent::where('followers', '=', function ($query) {
+            $query->selectRaw('min(followers)')->from('talent');
+        })->get();
 
         return view('admin.main-dashboard',[
             'title'=>'Dashboard - PT WARNA EMAS INDONESIA',
